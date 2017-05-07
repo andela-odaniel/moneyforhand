@@ -1,0 +1,17 @@
+{
+  "name": "moneyforhand",
+  "version": "1.0.0",
+  "description": "A mock online payments solution",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm test"
+  },
+  "author": "@sir_castiq",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "hapi": "^16.1.1",
+    "mongoose": "^4.9.7"
+  }
+}
