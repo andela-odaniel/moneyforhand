@@ -30,7 +30,6 @@ const MerchantController = {
       let username = request.payload.username;
       let password = request.payload.password;
       Merchant.login(username, password, () => {
-        console.log(arguements, 'args');
       })
     } else {
       reply('Please include username and password to login');
