@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 var Schema = mongoose.Schema;
 
 var TransactionSchema = new Schema({
@@ -8,8 +9,8 @@ var TransactionSchema = new Schema({
   },
   transactionId: {
     type: String,
-    required: true,
-    unique: true
+    unique: true,
+    required: true
   },
   transactionCurrency: {
     type: String,
@@ -27,6 +28,8 @@ var TransactionSchema = new Schema({
     required: true
   }
 })
+
+TransactionSchema.plugin(uniqueValidator, { message: '{PATH} already exists in the database'});
 
 var Transaction = mongoose.model('Transaction', TransactionSchema);
 

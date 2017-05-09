@@ -34,7 +34,6 @@ var MerchantSchema = new Schema({
 MerchantSchema.virtual('password')
   .set(function(value) {
     this.passwordHash = Bcrypt.hashSync(value);
-    console.log(value, this, 'issaPassword');
   });
 
 MerchantSchema.statics.login = function(username, password, callback) {

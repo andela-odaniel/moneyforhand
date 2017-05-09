@@ -12,34 +12,56 @@ server.connection({
   port: 8000
 });
 
+server.register(require('vision'), (err) => {
+  if (err) throw err;
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, reply) => {
-    return reply('Issa Live');
-  }
-});
+  server.views({
+    engines: {
+      html: require('handlebars')
+    },
+    path: __dirname + '/templates'
+  });
 
-server.route({
-  method: 'POST',
-  path: '/merchants/signup',
-  handler: MerchantController.signUp
-});
+  server.route({
+    method: 'GET',
+    path: '/paymentdetails',
+    handler: TransactionController.startPayment
+  });
 
-server.route({
-  method: 'POST',
-  path: '/merchants/login',
-  handler: MerchantController.login
-});
+  server.route({
+    method: 'POST',
+    path: '/finishPayment',
+    handler: TransactionController.finishPayment
+  })
 
-server.route({
-  method: 'POST',
-  path: '/transaction/pay',
-  handler: TransactionController.makePayment
-});
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+      return reply('Issa Live');
+    }
+  });
 
-server.start((error) => {
-  if (error) throw error;
-  console.log('Server running at: ', server.info.uri);
+  server.route({
+    method: 'POST',
+    path: '/merchants/signup',
+    handler: MerchantController.signUp
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/merchants/login',
+    handler: MerchantController.login
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/transaction/pay',
+    handler: TransactionController.makePayment
+  });
+
+  server.start((error) => {
+    if (error) throw error;
+    console.log('Server running at: ', server.info.uri);
+  });
 });
