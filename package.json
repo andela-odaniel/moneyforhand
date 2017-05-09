@@ -4,8 +4,9 @@
   "description": "A mock online payments solution",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "npm test"
+    "start": "node server.js",
+    "test": "npm test",
+    "start:dev": "nodemon server.js"
   },
   "author": "@sir_castiq",
   "license": "MIT",

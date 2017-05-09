@@ -5,11 +5,13 @@ const Hapi = require('Hapi');
 const server = new Hapi.Server();
 
 const MerchantController = require('./controllers/merchant');
+const TransactionController = require('./controllers/transaction');
 
 server.connection({
   host: 'localhost',
   port: 8000
 });
+
 
 server.route({
   method: 'GET',
@@ -31,7 +33,13 @@ server.route({
   handler: MerchantController.login
 });
 
+server.route({
+  method: 'POST',
+  path: '/transaction/pay',
+  handler: TransactionController.makePayment
+});
+
 server.start((error) => {
-  if (error) throw err;
+  if (error) throw error;
   console.log('Server running at: ', server.info.uri);
 });

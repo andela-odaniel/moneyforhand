@@ -8,15 +8,18 @@ var Schema = mongoose.Schema;
 var MerchantSchema = new Schema({
   username: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   businessName: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   email: {
     type: String,
     required: true,
+    unique: true
   },
   address: {
     type: String,
