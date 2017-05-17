@@ -23,7 +23,7 @@ server.register(require('vision'), (err) => {
   });
 
   server.route({
-    method: 'GET',
+    method: 'POST',
     path: '/paymentdetails',
     handler: TransactionController.startPayment
   });
