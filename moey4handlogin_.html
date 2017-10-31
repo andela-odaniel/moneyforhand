@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        .navbar{
+           background-color: rgba(245, 241, 237, 1);  
+        }
+        
+        body {
+ 
+           padding-bottom: 40px;
+           background-color: rgba(249, 222, 222, 1);
+           margin-bottom: 60px;
+        }
+
+        .form-sign {
+          max-width: 330px;
+          padding: 15px;
+          margin: auto;
+        }
+        .form-sign .form-sign-heading,
+        .form-sign .checkbox {
+          margin-bottom: 10px;
+        }
+        .form-sign .checkbox {
+          font-weight: 400;
+        }
+        .form-sign .form-control {
+          position: relative;
+          box-sizing: border-box;
+          height: auto;
+          padding: 10px;
+          font-size: 16px;
+        }
+        .form-sign .form-control:focus {
+          z-index: 2;
+        }
+        
+        .form-sign input[type="firstName"] {
+          margin-bottom: 1px;
+          
+        }
+        
+        .form-sign input[type="lastName"] {
+          margin-bottom: 1px;
+          
+        }
+        
+        #inputEmailUp {
+          margin-bottom: 1px;
+          
+        }
+        
+        #inputPasswordUp {
+          margin-bottom: 1px;
+          
+        }
+        
+        
+        #inputEmail{
+          margin-bottom: -1px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        
+        #inputPassword{
+          margin-bottom: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+        footer{
+            background-color: rgba(173, 145, 158, 1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            
+        }
+    </style>
+    
+    
+    
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">money4hand</a>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+            
+            <ul class="navbar-nav">><!-- the login box can go here-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#signUp">Sign-up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#signIn">Sign-in</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+    
+    <div class="container">
+      <form class="form-sign" id="signUp"><!-- worry about the action of the form-->
+        <p class="form-sign-heading">Sign up</p>
+        <label for="inputName" class="sr-only">First name</label>
+        <input type="firstName" id="inputName" class="form-control" placeholder="First name" required autofocus>
+         <label for="inputName" class="sr-only">Last name</label>
+        <input type="lastName" id="inputName" class="form-control" placeholder="Last name" required autofocus>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmailUp" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPasswordUp" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+ 
+        </div>
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Sign up</button>
+      </form>
+
+      <form class="form-sign" id="signIn"><!-- worry about the action of the form-->
+        <p class="form-sign-heading">Already a member ? Sign in</p>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me >
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>
+    
+    <footer class="footer">
+        <p class="text-center">money4hand (2017)</p>
+    </footer>
+    
+</body>
+</html>
